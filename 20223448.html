@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            font-size: 45px;
+        }
+        header{
+            height: 20%;
+            background: #881361;
+            margin: 0%;
+          
+        }
+       
+           
+        
+        div{
+            height: 50%;
+            background: #ce5513;
+            margin: 0%;
+         
+        }
+        footer{
+            height: 30%;
+            background: rgb(23, 184, 55);
+            margin: 0%;
+       
+        }
+
+    </style>
+    <script>
+        // let time1=new Date();
+        console.time('first');
+    </script>
+   
+</head>
+<body>
+    <header>
+        text
+    </header>
+   
+    <div>
+        ti
+    </div>
+    <footer>
+        wei
+    </footer>
+     <script>
+        console.timeEnd('first');
+
+        let time1=new Date();
+        {
+            let i=1;
+            while (i<=100000){
+                i++;
+            }
+        }
+        let myBody=document.querySelector("body");
+        console.log(myBody);
+        myBody.style.height=innerHeight-18+"px";        
+        let math1=Math.floor(Math.random()*100);
+        console.log(math1);
+        let pe=document.querySelector("footer");
+        pe.textContent="随即两位数:"+math1;
+        let div1=document.querySelector("div");
+        div1.textContent="运行的时间："+(new Date()-time1)+'ms';
+        console.log("结束时间"+(new Date()-time1)+'ms');
+    </script>
+</body>
+</html>
