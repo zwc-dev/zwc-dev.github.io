@@ -126,7 +126,7 @@ UI.log = function (s) {
 UI.footerLog = function (s) {
     select('footer').textContent = s;
     setTimeout(() => {
-        select('footer').textContent = "江西科技师范大学 李健宏 2024--2025";
+        select('footer').textContent = "江西科技师范大学 朱武成 2024--2025";
     }, 3 * 1000);
 };
 UI.response = function (s) {
