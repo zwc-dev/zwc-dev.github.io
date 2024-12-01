@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>轻松背单词--CET6</title>
+</head>
+<link rel="stylesheet" href="view.css">
+<script src="model.js">
+</script>
+
+<body>
+    <header>
+        <p id="title">
+            CET6-轻轻松松背单词
+        </p>
+        <span id='response'>
+        </span>
+    </header>
+    <nav>
+        <div class="nav-row">
+            <button id="firstWord" class="small">开背单词</button>
+            <button id="nextWord" class="small">继续背词</button>
+            <button id="lastWord" class="small">最后单词</button>
+        </div>
+        <div class="nav-row">
+            <button id="saveWord" class="big">存储进度</button>
+            <button id="reviewWord" class="big">复习单词</button>
+        </div>
+    </nav>
+    <main>
+        <p id="en"></p>
+        <span id='level'>难度：</span>
+        <p id="pn"></p>
+        <p id="cn1" class="cn"></p>
+        <p id="cn2" class="cn"></p>
+        <p id="cn3" class="cn"></p>
+        <p id="cn4" class="cn"></p>
+        <p id="cn5" class="cn"></p>
+        <hr />
+        <p id="log"></p>
+    </main>
+
+
+    <form onsubmit="return false;">
+        <div class="form-header">
+            请您登录
+        </div>
+        <div class="form-group">
+            <label for="username">用户：</label>
+            <input type="text" id="username" name="user" />
+        </div>
+        <div class="form-group">
+            <label for="password">密码：</label>
+            <input type="password" id="password" name="pass" />
+        </div>
+        <div class="form-buttons">
+            <button type="button" id="signIn">注册</button>
+            <button type="submit" id="loginIn">登录</button>
+        </div>
+    </form>
+    <footer>
+        江西科技师范大学 朱武成 2024--2025
+    </footer>
+    <script src="controller.js">
+        document.addEventListener('DOMContentLoaded', () => {
+            const cursor = document.createElement('div');
+            cursor.className = 'cursor-glow';
+            document.body.appendChild(cursor);
+
+            let cursorVisible = false;
+            let timeout;
+
+            document.addEventListener('mousemove', (e) => {
+                cursor.style.opacity = '1';
+                cursor.style.left = e.clientX + 'px';
+                cursor.style.top = e.clientY + 'px';
+
+                clearTimeout(timeout);
+                timeout = setTimeout(() => {
+                    cursor.style.opacity = '0';
+                }, 1000);
+
+                if (!cursorVisible) {
+                    cursorVisible = true;
+                    cursor.style.opacity = '1';
+                }
+            });
+
+            document.addEventListener('mouseleave', () => {
+                cursor.style.opacity = '0';
+                cursorVisible = false;
+            });
+        });
+    </script>
+</body>
+
+</html>
